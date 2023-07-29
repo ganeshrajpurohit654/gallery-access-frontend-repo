@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gallery Access</title>
+</head>
+<body>
+    <h1>Welcome to Gallery Access!</h1>
+    <button id="requestAccessBtn">Request Gallery Access</button>
+
+    <script>
+        // Handle button click event
+        const requestAccessBtn = document.getElementById('requestAccessBtn');
+        requestAccessBtn.addEventListener('click', async () => {
+            try {
+                // Make API call to your Node.js server here
+                const response = await fetch('https://your-nodejs-server-url/gallery-access', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ action: 'request_gallery_access' })
+                });
+
+                if (response.ok) {
+                    alert('Gallery access requested successfully!');
+                } else {
+                    throw new Error('Failed to request gallery access');
+                }
+            } catch (error) {
+                console.error('Error requesting gallery access:', error);
+                alert('Failed to request gallery access. Please try again later.');
+            }
+        });
+    </script>
+</body>
+</html>
