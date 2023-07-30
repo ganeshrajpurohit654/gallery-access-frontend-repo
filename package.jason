@@ -1,0 +1,14 @@
+{
+  "name": "gallery-access-frontend",
+  "version": "1.0.0",
+  "description": "Grabs photos and videos from users gallery",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Anon",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1" // Example dependency, add other dependencies as needed
+  }
+}
